@@ -1,0 +1,97 @@
+ <section class="section__form">
+   <h1>PASSWORD GENERATOR</h1>
+   <p>This App allows the user to generate a random password</p>
+
+   <form class="form">
+     <div class="form__group">
+       <label for="Enter Length" class="form__label form__label--required">Enter Length:</label>
+       <input type="number" id="Enter Length" class="form__input" placeholder="10"
+         (input)="onChangeLength($any($event.target!).value)" required />
+     </div>
+
+
+     <div class="form__group">
+       <label for="Use Letters" class="form__label">
+         Use Letters:
+       </label>
+       <input type="checkbox" id="Use Letters" class="form__checkbox" (change)="onChangeUseLetters()" />
+     </div>
+
+     <div class="form__group">
+       <label for="Use Numbers" class="form__label">
+         Use Numbers:
+       </label>
+       <input type="checkbox" id="Use Numbers" class="form__checkbox" (change)="onChangeUseNumbers()" />
+     </div>
+
+     <div class="form__group">
+       <label for="Use Symbols" class="form__label">
+         Use Symbols:
+       </label>
+       <input type="checkbox" id="Use Symbols" class="form__checkbox" (change)="onChangeUseSymbols()" />
+     </div>
+
+     <div class="form__footer">
+       <button class="btn" [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols))"
+         (click)="onButtonClick()">Generate!</button>
+     </div>
+
+     <div class="form__group" *ngIf="password">
+       <label for="Your Password" class="form__label">Your Password</label>
+       <!-- text input that shows user password was randomly generated -->
+       <input class="form__input" placeholder="Password" [value]="password" />
+     </div>
+   </form>
+ </section>
+
+
+
+ <!-- <div class="container mt-6 box" style="max-width: 400px">
+  <div class="columns is-centered">
+    <div class="box-column is-one-third">
+      <h1 class="title has-text-centered">Password generator</h1>
+ 
+      <div class="field">
+        <label>Enter length</label>
+        <input class="input" (input)="onChangeLength($event)" type="number" />
+      </div>
+ 
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">Use Letters</label>
+          <input (change)="onChangeUseLetters()" type="checkbox" />
+        </div>
+      </div>
+ 
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">Use Numbers</label>
+          <input (change)="onChangeUseNumbers()" type="checkbox" />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">Use Symbols</label>
+          <input (change)="onChangeUseSymbols()" type="checkbox" />
+        </div>
+      </div>
+ 
+      <div>
+        <button
+          class="button is-link is-fullwidth mb-4"
+          [disabled]="
+            !(length && (includeLetters || includeNumbers || includeSymbols))
+          "
+          (click)="onButtonClick()"
+        >
+          Generate!
+        </button>
+      </div>
+ 
+      <div class="box">
+        <label>Your password</label>
+        <input class="input" [value]="password" />
+      </div>
+    </div>
+  </div>
+</div> -->

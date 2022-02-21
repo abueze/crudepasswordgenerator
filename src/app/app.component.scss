@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+$font-family-heading: 'Bebas Neue',
+sans-serif;
+$font-family: 'Source Sans Pro',
+'Helvetica',
+'Arial',
+sans-serif;
+$font-weight-light: 300;
+$font-weight-bold: 700;
+$font-size-base: 16px;
+
+$gutter: 10px;
+$border-radius: 2px;
+
+
+$color-primary: #31d47d;
+$background-color: #f4fcff;
+$input-bg: #fff;
+$text-color: darken($background-color, 86%);
+$border-color: desaturate(darken($background-color, 16%), 56%);
+$list-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+$border-bottom: #6edfdf;
+
+$important-color: #f42866;
+
+
+h1 {
+    display: inline-block;
+    font-family: $font-family-heading;
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: $font-weight-bold;
+    margin: 0 0 .8rem 0;
+    border-bottom: 4px solid $border-bottom;
+}
+
+p {
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.section__form {
+    padding: 0 ($gutter * 2);
+}
+
+
+.form {
+    background: $input-bg;
+    max-width: 400px;
+    margin: auto;
+    padding: .5em 1em;
+    box-shadow: $list-box-shadow;
+    margin-bottom: $gutter * 2;
+}
+
+.form__group {
+    position: relative;
+    padding: 1em 1em 1em 4%;
+    margin: 0 auto;
+    border-bottom: solid .15rem $border-bottom;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// .form__label,
+// .form__input {
+//     display: block;
+//     width: 100%;
+// }
+
+.form__checkbox {
+
+    // font-size: 20px;
+    max-width: 25rem;
+
+}
+
+.form__label {
+    cursor: pointer;
+    margin-right: 1.5rem;
+    padding: .1rem;
+    margin-bottom: $gutter / 2;
+
+    &--required {
+        position: relative;
+
+        &:before {
+            content: "*";
+            position: absolute;
+            left: -$gutter;
+            color: $important-color;
+        }
+    }
+}
+
+.form__input {
+    padding: 10px;
+    background-color: lighten($border-bottom, 30%);
+    ;
+    left: 9rem;
+    border: .5rem;
+    width: 60%;
+    position: absolute;
+    text-align: center;
+
+    &:focus {
+        outline: $input-bg;
+        background-color: desaturate(darken($background-color, 2%), 55%);
+    }
+}
+
+.form__checkbox {
+    position: absolute;
+    left: 15rem;
+    width: 20%;
+    align-content: center;
+}
+
+.form__footer {
+    text-align: right;
+    position: relative;
+    padding: 1em 1em 1em 4%;
+    margin: 0 auto;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.btn {
+    color: white;
+    white-space: nowrap;
+    background-color: $color-primary;
+    padding: .8rem 1rem;
+    border: 0;
+    border-radius: $border-radius;
+    transition: all 150ms ease-out;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        background-color: darken($color-primary, 14%);
+    }
+}
